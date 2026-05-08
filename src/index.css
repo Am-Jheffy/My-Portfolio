@@ -1,1 +1,64 @@
 @import "tailwindcss";
+
+/* ─── Fonts ────────────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+/* ─── Reset ────────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Tokens ───────────────────────────────────────────────────────────────── */
+:root {
+  --green: #6EFF6E;
+  --bg: #1c1c1c;
+  --nav-h: 72px; /* navbar height — keep in sync with Navbar.tsx padding */
+}
+
+/* ─── Base ─────────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ─── Shared typographic classes ───────────────────────────────────────────── */
+
+/* Large display name on the hero */
+.hero-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(62px, 10vw, 150px);
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+  color: var(--green);
+  text-transform: uppercase;
+  user-select: none;
+}
+
+/* Vertical "SCROLL" indicator */
+.scroll-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ─── Stat numbers (Projects / Skills sections) ────────────────────────────── */
+.stat-number {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(52px, 7vw, 80px);
+  letter-spacing: -0.02em;
+  color: #fff;
+  line-height: 1;
+}
