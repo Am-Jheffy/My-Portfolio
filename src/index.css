@@ -14,7 +14,7 @@
 :root {
   --green: #6EFF6E;
   --bg: #1c1c1c;
-  --nav-h: 72px; /* navbar height — keep in sync with Navbar.tsx padding */
+  --nav-h: 68px; /* matches Navbar: height set via style prop in Navbar.tsx */
 }
 
 /* ─── Base ─────────────────────────────────────────────────────────────────── */
@@ -27,20 +27,33 @@ body {
   color: #fff;
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
+  /* Hide native scrollbar — custom SCROLL indicator is the only one visible */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /* ─── Shared typographic classes ───────────────────────────────────────────── */
 
-/* Large display name on the hero */
+/* Large display name — useFitText in Header.tsx sets final px size at runtime.
+   13.5vw is intentionally a bit large so JS shrinks down (faster convergence
+   than growing up). overflow:hidden prevents a 1-frame flash of overflow.     */
 .hero-name {
   font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  font-size: clamp(62px, 10vw, 150px);
+  font-weight: 900;
+  font-size: 13.5vw;
   line-height: 0.88;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   color: var(--green);
   text-transform: uppercase;
+  white-space: nowrap;
   user-select: none;
+  display: block;
+  /* DO NOT set width:100% here — it fights with useFitText measurement */
+  overflow: hidden;
+  opacity: 0;  /* hidden until JS sets correct size, then Header fades it in */
 }
 
 /* Vertical "SCROLL" indicator */
