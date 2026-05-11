@@ -61,7 +61,7 @@ export default function App() {
 
   return (
     // Outer wrapper — just stacks children, no overflow tricks
-    <div style={{ background: "#1c1c1c", minHeight: "100vh" }}>
+    <div style={{ background: "#1c1c1c", minHeight: "100vh" }} >
 
       {/* ── ONE sticky navbar ───────────────────────────────────────────────── */}
       <div

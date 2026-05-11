@@ -21,7 +21,7 @@ interface NavbarProps {
 export default function Navbar({ label, menuOpen, onToggleMenu }: NavbarProps) {
   return (
     <nav
-      className="flex items-center justify-between px-8"
+      className="flex items-center justify-between px-8!"
       style={{
         height: "var(--nav-h, 72px)",
         background: "#1c1c1c", // always opaque — no transparency bleed
@@ -29,7 +29,7 @@ export default function Navbar({ label, menuOpen, onToggleMenu }: NavbarProps) {
     >
       {/* ── Left: brand + optional section label ── */}
       <div className="flex items-center gap-8">
-        <span className="text-white text-sm font-semibold tracking-wide select-none">
+        <span className="text-gray-300 text-sm font-semibold tracking-wide select-none">
           {SITE_NAME}
         </span>
         {label && (
@@ -46,7 +46,7 @@ export default function Navbar({ label, menuOpen, onToggleMenu }: NavbarProps) {
       <div className="relative" data-menu>
         <button
           onClick={onToggleMenu}
-          className="flex items-center gap-3 bg-white text-[#1a1a1a] rounded-full px-5 py-2.5 text-sm font-semibold hover:bg-gray-100 transition-colors"
+          className="flex items-center gap-3 bg-red-600 text-[#1a1a1a] rounded-full px-5 py-2.5 text-sm font-semibold hover:bg-gray-100 transition-colors"
         >
           <span>Menu</span>
           <motion.span

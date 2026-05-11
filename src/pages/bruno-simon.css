@@ -1,0 +1,209 @@
+
+/* ── Keyframes ──────────────────────────────────────── */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes menuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes floatDot {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-14px);
+  }
+}
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 4px rgba(180, 255, 111, 0.15),
+      0 0 18px 6px rgba(180, 255, 111, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 0 7px rgba(180, 255, 111, 0.08),
+      0 0 28px 10px rgba(180, 255, 111, 0.28);
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-18deg);
+  }
+  40% {
+    transform: rotate(16deg);
+  }
+  60% {
+    transform: rotate(-12deg);
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+/* ── Animation utilities ────────────────────────────── */
+.animate-slide-up {
+  animation: slideUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-fade-in-up {
+  animation: fadeInUp 1s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-fade-in-up-2 {
+  animation: fadeInUp 1s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-fade-in-up-3 {
+  animation: fadeInUp 1s 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-menu-in {
+  animation: menuIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-float-dot {
+  animation: floatDot 3.8s ease-in-out infinite;
+}
+.animate-pulse-dot {
+  animation: pulseDot 3.8s ease-in-out infinite;
+}
+.animate-wave {
+  display: inline-block;
+  animation: wave 2s 0.8s ease-in-out;
+}
+
+/* ── Portrait — mask gradient (not expressible in Tailwind) */
+.portrait-mask {
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    black 20%,
+    black 100%
+  );
+  mask-image: linear-gradient(to top, transparent 0%, black 20%, black 100%);
+}
+
+/* ── Portrait background glow ───────────────────────── */
+.portrait-glow {
+  background: radial-gradient(
+    ellipse 65% 55% at 50% 55%,
+    rgba(110, 200, 60, 0.13) 0%,
+    transparent 70%
+  );
+}
+
+/* ── writing-mode — not in Tailwind v4 core ─────────── */
+.writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* ── Menu pill button ───────────────────────────────── */
+/* Defined in CSS so border-radius + hover are rock-solid */
+.menu-pill {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  background: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #000000;
+  transition: background-color 0.25s ease;
+  white-space: nowrap;
+}
+.menu-pill:hover {
+  background-color: #b4ff6f;
+}
+
+/* ── Dropdown nav links ─────────────────────────────── */
+.nav-link {
+  display: block;
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+.nav-link:hover {
+  background-color: #f5f5f5;
+}
+
+/* ── Dropdown close button ──────────────────────────── */
+.close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  color: #aaaaaa;
+  transition: color 0.2s ease;
+}
+.close-btn:hover {
+  color: #000000;
+}
+
+/* ── Contact links ──────────────────────────────────── */
+.contact-link {
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.contact-link:hover {
+  color: #ffffff;
+}
+
+/* ── Social links ───────────────────────────────────── */
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.social-link:hover {
+  color: #ffffff;
+}
